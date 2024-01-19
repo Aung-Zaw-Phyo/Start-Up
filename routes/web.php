@@ -1,5 +1,7 @@
 <?php
 
+use App\Filament\Pages\AppUserView;
+use App\Filament\Pages\UserView;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/admin/app-user/view/{id}', AppUserView::class)->name('app_user.view');
+Route::get('/admin/user/view/{id}', UserView::class)->name('user.view');
